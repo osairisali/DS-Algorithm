@@ -48,13 +48,14 @@ const permutation = (mainArray, numbers, subArray = [], m) => {
   if (m > 0) {
     // iterasi pada semua elemen numbers
     for (let i = 0; i < numbers.length; ++i) {
+      // console.log("m: ", m);
 
-      // ambil elemen dari
+      // ambil elemen sebagai filter
       let element = numbers[i];
       let filtered = numbers.filter((el) => el !== element);
 
       // recursive untuk masing-masing elemen numbers
-      // ini klo pake --m, hasilnya nggak sesuai, jadi pake m-1
+      // ini klo pake --m, hasilnya nggak sesuai, jadi pake m-1, soalnya --m mekanismenya m = m - 1
       permutation(mainArray, filtered, subArray.concat(element), m - 1);
     }
   } else {
@@ -64,7 +65,32 @@ const permutation = (mainArray, numbers, subArray = [], m) => {
   return mainArray;
 };
 
-const arr = [0, 1, 2, 3, 'a', 'b', 'c'];
-const permArray = permutation([], arr, [], 2);
+const arr = [0, 1, 2, 3, "a", "b", "c"];
+let subArray = [];
+let mainnArray = [];
+let m = 2;
+const permArray = permutation(mainnArray, arr, subArray, m);
+console.log("mainArray: ", mainnArray);
+console.log("subArray: ", subArray);
+console.log("m: ", m);
 console.log("generated permutation: ", permArray);
 console.log("length of permutations: ", permArray.length);
+
+const permutationLoop = (arrNum, permElLen) => {
+  const perm = [];
+  // if (permElLen > 0) {
+    for (el of arrNum) {
+      const headEl = el;
+      const restEl = arrNum.filter((el) => el !== headEl);
+      for (let i = 0; i < restEl.length; i++) {
+        const childPerm = [headEl];
+        childPerm.push(restEl[i]);
+        console.log(childPerm);
+        perm.push(childPerm);
+      }
+    }
+  // }
+  return perm;
+};
+
+console.log(permutationLoop(arr));

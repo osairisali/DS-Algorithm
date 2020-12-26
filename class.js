@@ -34,3 +34,5 @@ obj.method3("akbar");
 
 obj.method4("hakim");
 // options from method2:  hahaha options from obj  name:  hakim
+
+console.table(obj);
