@@ -3,6 +3,7 @@ class Node {
     this.data = data;
     this.left = left;
     this.right = right;
+    this.count = 1;
     // without explicit binding, but must use arrow function+
     // no need to set method in constructor with arrow function
     // this.show = this.show;

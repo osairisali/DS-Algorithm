@@ -2,7 +2,7 @@
   "name": "js-algorithms",
   "version": "1.0.0",
   "description": "",
-  "main": "./permutation/permutation.js",
+  "main": "./binary-search-tree/binary-search-tree.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start":"nodemon ./binary-search-tree/binary-search-tree.js"
