@@ -143,6 +143,16 @@ class BST {
       }
     }
   };
+
+  countNode = (node) => {
+    let counter = 1;
+    if (!node) {
+      return 0;
+    }
+    counter += this.countNode(node.left);
+    counter += this.countNode(node.right);
+    return counter;
+  };
 }
 
 const nums = new BST();
@@ -156,6 +166,9 @@ nums.insert(99);
 nums.insert(22);
 nums.insert(0);
 nums.insert(22);
+nums.insert(55);
+nums.insert(57);
+nums.insert(21);
 nums.inOrder(nums.root);
 
 console.log("min node value: ", nums.getMin());
@@ -173,4 +186,6 @@ console.log("max node value: ", nums.getMax());
 // console.log("after removing node 22: ");
 nums.inOrder(nums.root);
 
-console.log(nums.find(22));
+// console.log(nums.find(22));
+
+console.log("number of nodes: ", nums.countNode(nums.root));

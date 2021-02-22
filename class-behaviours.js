@@ -71,6 +71,7 @@ const obj2 = {
     return this.name;
   },
   arrFun: () => {
+    console.log("this obj from arrFun:", this);
     return this.name;
   },
   fun2() {
@@ -79,6 +80,7 @@ const obj2 = {
     };
   },
   fun3() {
+    console.log("this object from fun3: ", this);
     return this.arrFun;
   },
 };

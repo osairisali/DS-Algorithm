@@ -1,4 +1,4 @@
-const isPrime = (num, divisor = num - 1) => {
+const isPrimeRecursive = (num, divisor = num - 1) => {
   if (num === 2) {
     return false;
   } else if (num === 1) {
@@ -12,8 +12,8 @@ const isPrime = (num, divisor = num - 1) => {
     return false;
   }
 
-  const result = isPrime(num, divisor - 1);
+  const result = isPrimeRecursive(num, divisor - 1);
   return result;
 };
 
-console.log(isPrime(103));
+console.log(isPrimeRecursive(103));
