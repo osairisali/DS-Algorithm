@@ -19,5 +19,15 @@ var fibonacci = (function () {
   return f;
 })();
 
+// n-th number of fibonacci sequence
 console.log(fibonacci(9));
 // 34
+
+// linear recursive with simple code
+const fib = (n, lastlast = 0, last = 1) => {
+  if (n === 0) return lastlast;
+  if (n === 1) return last;
+  return fib(n - 1, last, lastlast + last);
+};
+
+console.log(fib(9));

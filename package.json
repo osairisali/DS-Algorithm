@@ -5,7 +5,7 @@
   "main": "./binary-search-tree/binary-search-tree.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"nodemon ./numbers/common-elements.js"
+    "start":"nodemon ./recursive/fibonacci.js"
   },
   "author": "",
   "license": "ISC",
