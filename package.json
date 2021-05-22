@@ -2,10 +2,10 @@
   "name": "js-algorithms",
   "version": "1.0.0",
   "description": "",
-  "main": "./binary-search-tree/binary-search-tree.js",
+  "main": "./recursive/chop.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"nodemon ./recursive/fibonacci.js"
+    "start":"nodemon ./recursive/multidimensional-array.js"
   },
   "author": "",
   "license": "ISC",

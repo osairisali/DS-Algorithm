@@ -65,6 +65,8 @@ console.table(obj);
 
 // try to change `this.name` with param but failed, still print "osairis"
 const obj2 = {
+  // klo mau pake ginian harus ada babel
+  // state = 'ignore',
   obj,
   name: "morolov",
   fun() {
@@ -127,3 +129,44 @@ console.log(obj2.fun2()());
 console.log(obj2.fun3()());
 
 console.table(obj2);
+
+class App {
+  constructor(apple, google) {
+    (this.appleProducts = [...apple]), (this.googleProducts = [...google]);
+  }
+
+  // ini tersimpan bukan sebagai variabel, tp sbg property dalam object
+  // jd aksesnya harus pakai this. Ini bs diakses secara publik dr myThings.listAppleProducts
+  listAppleProducts = ["iPhone", "Macbook", "iPad", "iPod"];
+
+  // ini juga diakses dengan this
+  startExpense = (products) => {
+    if (this.listAppleProducts.indexOf(products) > -1) {
+      this.appleProducts.push(products);
+    } else {
+      this.googleProducts.push(products);
+    }
+  };
+
+  print = (brand = "google") => {
+    if (brand === "apple") {
+      console.log(this.appleProducts);
+    } else {
+      console.log(this.googleProducts);
+    }
+  };
+}
+
+const myThings = new App(["Macbook"], ["android", "tab"]);
+// prints "Macbook"
+myThings.print("apple");
+myThings.startExpense("iPad");
+// prints ["Macbook", "iPad"]
+myThings.print("apple");
+// prints ["android", "tab"]
+myThings.print();
+// kebaca krn sifatnya public -> ["iPhone", "Macbook", "iPad", "iPod"]
+console.log(myThings.listAppleProducts);
+// sifatnya public -> ["Macbook", "iPad"]
+console.log(myThings.appleProducts);
+console.log(myThings.startExpense);

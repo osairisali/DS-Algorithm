@@ -9,7 +9,7 @@ const isPrime = (n) => {
   // look for modulus with 2 and 3
   if (n % 2 === 0 || n % 3 === 0) return false;
 
-  // look for modulus of other odd numbers
+  // look for remainder of other odd numbers
   // for arithmatic teoretical reference, see Javascript Data Structure and Algorithm by Sammie Bae
   for (var i = 5; i * i <= n; i += 6) {
     if (n % i === 0 || n % (i + 2) === 0) return false;
@@ -33,7 +33,7 @@ const primeFactors = (n) => {
     n /= 2;
   }
 
-  // test if remaining n has modulus with odd number factors
+  // test if remaining n has remainder with odd number factors
   for (var i = 3; i * i <= n; i += 2) {
     while (n % i === 0) {
       console.log(i);

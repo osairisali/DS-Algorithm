@@ -1,3 +1,4 @@
+// immediately invoked function to execute f()
 var fibonacci = (function () {
   var memo = {};
 
@@ -17,7 +18,7 @@ var fibonacci = (function () {
   }
 
   return f;
-})();
+})(); // execute immediately to return function f
 
 // n-th number of fibonacci sequence
 console.log(fibonacci(9));
