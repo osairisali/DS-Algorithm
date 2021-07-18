@@ -66,6 +66,8 @@ const deepClone = (obj, temp = {}, tempArr = []) => {
     }
     temp[prop] = obj[prop];
   }
+  // TODO
+  // implement convertion array-like object to pure array
   return temp;
 };
 
@@ -74,5 +76,6 @@ console.log("deepCloned: ", clonedObj);
 clonedObj["name"] = "akbar";
 console.log("obj: ", obj);
 console.log("clonedObj: ", clonedObj);
+console.log("original obj: ", obj);
 console.log(Array.from(clonedObj.detail.phone))
 console.log(cloneArray(clonedObj.detail.phone))
